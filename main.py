@@ -17,6 +17,7 @@ LINE = "My smartwatch congratulates me for standing up, then warns me my heart r
 
 
 def main() -> None:
+    assert len(LINE) <= 200, f"entry is {len(LINE)} chars, over the 200-char gate"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(LINE)
